@@ -1,0 +1,50 @@
+import random
+option=("rock","paper","scissor")
+running=True
+a=0
+print("Your Score is: ",a)
+
+sum=0
+while running:
+    computer=random.choice(option)
+    player=None
+    
+    while player not in option:
+        player=input("Choose one (rock, paper, or scissor): ")
+        
+
+    print(f"Player: {player}")
+    print(f"Computer: {computer}")
+    
+    
+
+    if player==computer:
+        print("It's a Tie....")
+        print("Your Scroe is: ",sum)
+        
+    elif player=="rock" and computer=="scissor":
+        print("You Win...")
+        sum=sum+1
+        print("Your Scroe is: ",sum)
+        
+    elif player=="paper" and computer=="rock":
+        print("You Win...")
+        sum=sum+1
+        print("Your Scroe is: ",sum)
+        
+    elif player=="scissor" and computer=="paper":
+        print("You Win...")
+        sum=sum+1
+        print("Your Scroe is: ",sum)
+        
+    else:
+        print("You Loose.....")
+        sum=sum-1
+        print("Your Scroe is: ",sum)
+
+
+    play_again=input("Play again? (y/n)").lower()
+    if not play_again=="y":
+        running=False
+print("THANKS FOR PLAYING")
+print("TOTAL SCORE: ", sum)
